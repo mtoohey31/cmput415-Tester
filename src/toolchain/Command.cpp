@@ -94,7 +94,7 @@ void becomeCommand(const std::string &exe, const std::vector<std::string> &trueA
   }
 
   // Replace ourself with the command.
-  execve(exe.c_str(), const_cast<char * const *>(args), const_cast<char * const *>(env));
+  execvpe(exe.c_str(), const_cast<char * const *>(args), const_cast<char * const *>(env));
 
   // Because execve replaces the current process, we only ever get here if it fails.
   perror("execve");
